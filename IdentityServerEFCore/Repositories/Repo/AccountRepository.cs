@@ -22,6 +22,23 @@ namespace IdentityServerEFCore.Repositories.Repo
                 Email = createAccUser.Email,
                 UserName = createAccUser.FirstName
             };
+            List<string> roles = new List<string>();
+            if(createAccUser.view_customer)
+            {
+                roles.Add("view_customer");
+            }
+            if (createAccUser.update_customer)
+            {
+                roles.Add("update_customer");
+            }
+            if (createAccUser.delete_customer)
+            {
+                roles.Add("delete_customer");
+            }
+            if (createAccUser.create_customer)
+            {
+                roles.Add("create_customer");
+            }
             IdentityResult result = await _userManager.CreateAsync(user, createAccUser.Password);
                 if (result.Succeeded)
                 {
@@ -34,10 +51,11 @@ namespace IdentityServerEFCore.Repositories.Repo
                             new Claim("location", "somewhere")
                             }
                         ).Result;
+                    if (result.Succeeded)
+                    {
+                    result = _userManager.AddToRolesAsync(user, roles).Result;
+                    }
                 }
-            
-
-
             return result;
         }
     }

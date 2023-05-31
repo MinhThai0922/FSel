@@ -24,7 +24,25 @@ builder.Services.AddHttpClient("myHttpClient", client =>
     // Các thiết lập của HttpClient
     client.BaseAddress = new Uri("https://localhost:7055");
 });
-
+builder.Services.AddAuthorization(opts =>
+{
+    opts.AddPolicy("create_customer_only", policy =>
+    {
+        policy.RequireClaim("role", "create_customer");
+    });
+    opts.AddPolicy("view_customer_only", policy =>
+    {
+        policy.RequireClaim("role", "view_customer");
+    });
+    opts.AddPolicy("update_customer_only", policy =>
+    {
+        policy.RequireClaim("role", "update_customer");
+    });
+    opts.AddPolicy("delete_customer_only", policy =>
+    {
+        policy.RequireClaim("role", "delete_customer");
+    });
+});
 builder.Services.AddAuthentication("Bearer")
     .AddIdentityServerAuthentication("Bearer", options =>
     {

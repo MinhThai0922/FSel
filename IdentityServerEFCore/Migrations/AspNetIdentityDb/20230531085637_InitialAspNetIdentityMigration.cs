@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace IdentityServerEFCore.Migrations
+namespace IdentityServerEFCore.Migrations.AspNetIdentityDb
 {
     public partial class InitialAspNetIdentityMigration : Migration
     {

@@ -25,7 +25,7 @@ namespace CustomerAPI.Controllers
         }
         [HttpGet]
         [Route("GetAll")]
-        [Authorize]
+        [Authorize(Policy = "view_customer_only")]
         public async Task<IActionResult> Get(int page, int pagesize, [FromQuery] FilterCustomer filter)
         {
             // lấy danh sách bản ghi
@@ -53,7 +53,7 @@ namespace CustomerAPI.Controllers
 
         [HttpPost]
         [Route("CreateCustomer")]
-        [Authorize]
+        [Authorize(Policy = "create_customer_only")]
         public async Task<IActionResult> Create([FromBody] CreateCustomer model)
         {
             //var result = await _customerRepon.Create(model);
@@ -64,7 +64,7 @@ namespace CustomerAPI.Controllers
 
         [HttpPut]
         [Route("Update/{Id}")]
-        [Authorize]
+        [Authorize(Policy = "update_customer_only")]
         public async Task<IActionResult> Update(Guid Id, [FromBody] UpdateCustomer model)
         {
             //var result = await _customerRepon.Update(Id, model);
@@ -89,7 +89,7 @@ namespace CustomerAPI.Controllers
         }
 
         [HttpDelete("{Id}")]
-        [Authorize]
+        [Authorize(Policy ="delete_customer_only")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var result = await _mediator.Send(new DeleteCustomerCommand(id));

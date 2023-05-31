@@ -59,12 +59,58 @@ namespace IdentityServerEFCore
 
             var ctx = scope.ServiceProvider.GetService<AspNetIdentityDbContext>();
             ctx.Database.Migrate();
+            EnsureRole(scope);
             EnsureUsers(scope);
         }
-
-        public void CreateRolesAndUsers(IServiceScope scope)
+        private static void EnsureRole(IServiceScope scope)
         {
-            var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var roleManager = scope.ServiceProvider.GetService<RoleManager<IdentityRole>>();
+            var create_customer = roleManager.FindByNameAsync("create_customer").Result;
+            if (create_customer == null)
+            {
+                create_customer = new IdentityRole() { Name = "create_customer" };
+                var result = roleManager.CreateAsync(create_customer).Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+                result = roleManager.AddClaimAsync(create_customer, new Claim("create_customer", "true")).Result;
+            }
+
+            var update_customer = roleManager.FindByNameAsync("update_customer").Result;
+            if(update_customer == null)
+            {
+                update_customer = new IdentityRole() { Name = "update_customer" };
+                var result = roleManager.CreateAsync(update_customer).Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+                result = roleManager.AddClaimAsync(update_customer, new Claim("update_customer", "true")).Result;
+            }
+
+            var view_customer = roleManager.FindByNameAsync("view_customer").Result;
+            if(view_customer == null)
+            {
+                view_customer = new IdentityRole() { Name = "view_customer" };
+                var result = roleManager.CreateAsync(view_customer).Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+                result = roleManager.AddClaimAsync(view_customer, new Claim("view_customer", "true")).Result;
+            }
+            var delete_customer = roleManager.FindByNameAsync("delete_customer").Result;
+            if (delete_customer == null)
+            {
+                delete_customer = new IdentityRole() { Name = "delete_customer" };
+                var result = roleManager.CreateAsync(delete_customer).Result;
+                if (!result.Succeeded)
+                {
+                    throw new Exception(result.Errors.First().Description);
+                }
+                result = roleManager.AddClaimAsync(delete_customer, new Claim("delete_customer", "true")).Result;
+            }
         }
         private static void EnsureUsers(IServiceScope scope)
         {
@@ -97,6 +143,8 @@ namespace IdentityServerEFCore
                             new Claim("location", "somewhere")
                         }
                     ).Result;
+                result = userMgr.AddToRolesAsync(angella, new List<string> { "create_customer", "update_customer", "view_customer", "delete_customer" }).Result;
+
                 if (!result.Succeeded)
                 {
                     throw new Exception(result.Errors.First().Description);

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace IdentityServerEFCore.Migrations
+namespace IdentityServerEFCore.Migrations.AspNetIdentityDb
 {
     [DbContext(typeof(AspNetIdentityDbContext))]
     partial class AspNetIdentityDbContextModelSnapshot : ModelSnapshot

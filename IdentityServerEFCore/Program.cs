@@ -50,6 +50,10 @@ builder.Services.AddIdentityServer().AddAspNetIdentity<IdentityUser>()
 var app = builder.Build();
 app.MapControllers();
 app.MapGet("/", () => "Hello World!");
+app.MapGet("/seed", () => {
+    SeedData.EnsureSeedData(connectionString);
+    return "Done";
+});
 app.UseStaticFiles();
 app.UseRouting();
 app.UseIdentityServer();
