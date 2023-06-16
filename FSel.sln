@@ -11,7 +11,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateWay", "APIGateWay\AP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{BC4E7F35-D33A-4130-BD93-5F9BE728B66D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerEFCore", "IdentityServerEFCore\IdentityServerEFCore.csproj", "{8DB584B0-BB5F-4CE8-A0D7-5EB90B4ADE9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerEFCore", "IdentityServerEFCore\IdentityServerEFCore.csproj", "{8DB584B0-BB5F-4CE8-A0D7-5EB90B4ADE9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "chat_app", "chat_app\chat_app.csproj", "{E5EA4FE8-A521-4605-A4A9-5473C784CF1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatApi", "ChatApi\ChatApi.csproj", "{E6B8A803-17A0-4ADE-871E-CFD48D9437FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalChat", "SignalChat\SignalChat.csproj", "{6912C9C2-7244-44FC-94F1-C3598158F6CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyChat", "MyChat\MyChat.csproj", "{4AAADAEA-131B-47A2-AD94-E902A21ED96D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat", "Chat\Chat.csproj", "{2471AB0A-F949-4C5B-A5F8-F732520A83AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +49,26 @@ Global
 		{8DB584B0-BB5F-4CE8-A0D7-5EB90B4ADE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DB584B0-BB5F-4CE8-A0D7-5EB90B4ADE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DB584B0-BB5F-4CE8-A0D7-5EB90B4ADE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5EA4FE8-A521-4605-A4A9-5473C784CF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5EA4FE8-A521-4605-A4A9-5473C784CF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5EA4FE8-A521-4605-A4A9-5473C784CF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5EA4FE8-A521-4605-A4A9-5473C784CF1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6B8A803-17A0-4ADE-871E-CFD48D9437FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B8A803-17A0-4ADE-871E-CFD48D9437FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B8A803-17A0-4ADE-871E-CFD48D9437FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6B8A803-17A0-4ADE-871E-CFD48D9437FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6912C9C2-7244-44FC-94F1-C3598158F6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6912C9C2-7244-44FC-94F1-C3598158F6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6912C9C2-7244-44FC-94F1-C3598158F6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6912C9C2-7244-44FC-94F1-C3598158F6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAADAEA-131B-47A2-AD94-E902A21ED96D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAADAEA-131B-47A2-AD94-E902A21ED96D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAADAEA-131B-47A2-AD94-E902A21ED96D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAADAEA-131B-47A2-AD94-E902A21ED96D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2471AB0A-F949-4C5B-A5F8-F732520A83AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2471AB0A-F949-4C5B-A5F8-F732520A83AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2471AB0A-F949-4C5B-A5F8-F732520A83AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2471AB0A-F949-4C5B-A5F8-F732520A83AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

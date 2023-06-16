@@ -30,7 +30,7 @@ namespace CustomerAPI.Repositories.Repon
                   - Mỗi claim được mô tả bằng một cặp key-value, trong đó key được gọi là ClaimType và value là giá trị của claim. Khi người dùng cung cấp các thông tin xác thực của mình, hệ thống sẽ kiểm tra các claim này để xác thực người dùng và quyết định các quyền truy cập của họ.
                 */
                 var authClaims = new List<Claim>
-            {
+                {
                 new Claim(ClaimTypes.Email, model.UserName),
                 new Claim(ClaimTypes.Name, user.FullName),
                 /*
@@ -39,7 +39,7 @@ namespace CustomerAPI.Repositories.Repon
                  */
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
 
-            };
+                };
                 /*
                  * SymmetricSecurityKey là một đối tượng trong .NET Framework được sử dụng để đại diện cho một khóa bí mật (secret key) được sử dụng để xác thực và mã hóa các thông điệp. Điều này có nghĩa là chúng ta sử dụng cùng một khóa để mã hóa và giải mã thông điệp. 
 

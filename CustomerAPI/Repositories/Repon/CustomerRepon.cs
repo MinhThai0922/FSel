@@ -50,24 +50,24 @@ namespace CustomerAPI.Repositories.Repon
             }
             //try
             //{
-            //    var checkemail = await (CheckEmail(model.Email));
-            //    if (checkemail == false) return "Email đã được sử dụng";
-            //    var checkphone = await (CheckPhoneNumber(model.PhoneNumber));
-            //    if (checkphone == false) return "SDT đã được sử dụng";
-            //    Customer customer = new Customer()
+            //    var checkemail = await (checkemail(model.email));
+            //    if (checkemail == false) return "email đã được sử dụng";
+            //    var checkphone = await (checkphonenumber(model.phonenumber));
+            //    if (checkphone == false) return "sdt đã được sử dụng";
+            //    customer customer = new customer()
             //    {
-            //        Id = Guid.NewGuid(),
-            //        Address = model.Address,
-            //        BirthDay = model.BirthDay,
-            //        Email = model.Email,
-            //        PhoneNumber = model.PhoneNumber,
-            //        FullName = model.FullName
+            //        id = guid.newguid(),
+            //        address = model.address,
+            //        birthday = model.birthday,
+            //        email = model.email,
+            //        phonenumber = model.phonenumber,
+            //        fullname = model.fullname
             //    };
-            //    await _context.Customers.AddAsync(customer);
-            //    await _context.SaveChangesAsync();
-            //    return customer.Id.ToString(); ;
+            //    await _context.customers.addasync(customer);
+            //    await _context.savechangesasync();
+            //    return customer.id.tostring(); ;
             //}
-            //catch (Exception ex)
+            //catch (exception ex)
             //{
             //    return null;
             //}
