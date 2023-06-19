@@ -2,7 +2,7 @@
 
 namespace CustomerAPI.ViewModel.CustomerViewModel
 {
-    public class CreateCustomer
+    public class UpdateCustomer
     {
         [Required(ErrorMessage = "Không được bỏ trống Họ và tên")]
         public string FullName { get; set; }

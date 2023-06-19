@@ -1,5 +1,5 @@
 ﻿using APICustomer.Models;
-using APICustomer.ViewModel.CustomerViewModel;
+using CustomerAPI.ViewModel.CustomerViewModel;
 
 namespace CustomerAPI.Repositories.IRepon
 {

@@ -1,12 +1,8 @@
-﻿using APICustomer.Models;
-using APICustomer.ViewModel.CustomerViewModel;
-using CustomerAPI.Handlers;
-using CustomerAPI.Repositories.IRepon;
+﻿using CustomerAPI.Repositories.IRepon;
+using CustomerAPI.ViewModel.CustomerViewModel;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using static CustomerAPI.Commands.CustomerCommand;
 using static CustomerAPI.Queries.CustomerQuery;
 

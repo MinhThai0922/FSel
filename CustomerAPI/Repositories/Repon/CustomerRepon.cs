@@ -2,6 +2,7 @@
 using APICustomer.Models;
 using APICustomer.ViewModel.CustomerViewModel;
 using CustomerAPI.Repositories.IRepon;
+using CustomerAPI.ViewModel.CustomerViewModel;
 using Microsoft.EntityFrameworkCore;
 
 namespace CustomerAPI.Repositories.Repon
